@@ -5,6 +5,7 @@
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
+  "layout": "sidenav",
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#1098F7",
