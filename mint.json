@@ -13,7 +13,7 @@
     "background" : {
       "light": "#f2f2f2",
       "dark": "#212121"
-    }
+    },
     "anchors": {
       "from": "#0D9373",
       "to": "#07C983"
