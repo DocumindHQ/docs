@@ -8,11 +8,11 @@
   "layout": "sidenav",
   "font":{
     "headings": {
-      "family": "Instrument Sans",
+      "family": "League Spartan",
       "weight": 600
     },
     "body": {
-      "family": "Instrument Sans"
+      "family": "League Spartan"
     }
   },
   "favicon": "/favicon.svg",
@@ -32,7 +32,7 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:hello@documind.xyz"
     }
   ],
   "topbarCtaButton": {
