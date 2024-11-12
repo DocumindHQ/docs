@@ -38,7 +38,7 @@
   "topbarCtaButton": {
     "type": "github",
     "url": "https://github.com/DocumindHQ/documind",
-    "style": "pill"
+    "style": "roundedRectangle"
   },
   "tabs": [
     {
