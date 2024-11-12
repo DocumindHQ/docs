@@ -5,7 +5,16 @@
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
-  "layout": "solidSidenav",
+  "layout": "sidenav",
+  "font":{
+    "headings": {
+      "family": "Instrument Sans",
+      "weight": 600
+    },
+    "body": {
+      "family": "Instrument Sans"
+    }
+  },
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#1098F7",
