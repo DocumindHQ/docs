@@ -8,11 +8,14 @@
   "layout": "sidenav",
   "font":{
     "headings": {
-      "family": "League Spartan",
-      "weight": 600
+      "family": "Roobert Regular",
+  "url": "https://framerusercontent.com/assets/cW2uu3BWUn1DskIV6V8KXUlfCxk.woff2",
+  "format": "woff2"
     },
     "body": {
-      "family": "League Spartan"
+      "family": "Roobert Regular",
+  "url": "https://framerusercontent.com/assets/cW2uu3BWUn1DskIV6V8KXUlfCxk.woff2",
+  "format": "woff2"
     }
   },
   "favicon": "/favicon.svg",
