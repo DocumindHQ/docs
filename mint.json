@@ -34,35 +34,38 @@
   },
   "topbarLinks": [
     {
-      "name": "Support",
+      "name": "Contact",
       "url": "mailto:hello@documind.xyz"
     }
   ],
   "topbarCtaButton": {
     "name": "Try demo",
-    "url": "https://documind.xyz"
+    "url": "https://documind.xyz/demo"
+  },
+  "primaryTab": {
+    "name": "Open-source"
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "Changelog",
+      "url": "changelog"
     }
   ],
   "anchors": [
     {
-      "name": "Documentation",
+      "name": "Visit website",
       "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "url": "https://documind.xyz"
     },
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "name": "Github",
+      "icon": "github",
+      "url": "https://github.com/DocumindHQ/documind.git"
     },
     {
-      "name": "Blog",
+      "name": "Request access",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://documind.xyz/get-started"
     }
   ],
   "navigation": [
