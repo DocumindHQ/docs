@@ -42,10 +42,11 @@
     "name": "Try demo",
     "url": "https://documind.xyz/demo"
   },
-  "primaryTab": {
-    "name": "Open-source"
-  },
   "tabs": [
+   {
+      "name": "Open-source",
+      "url": "open-source"
+   },
    {
       "name": "What's new?",
       "url": "changelog"
