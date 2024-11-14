@@ -46,11 +46,15 @@
     "name": "Open-source"
   },
   "tabs": [
-    {
-      "name": "Changelog",
-      "url": "changelog"
-    }
-  ],
+  {
+    "name": "Writing Content",
+    "url": "content"
+  },
+  {
+    "name": "API References",
+    "url": "api-playground"
+  }
+],
   "anchors": [
     {
       "name": "Visit website",
