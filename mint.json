@@ -87,6 +87,10 @@
           },
           "templates/contribute"
       ]
+  },
+  {
+    "group": "What's new?",
+    "pages": ["changelog/2024-11-14"]
   }
   ],
   "footerSocials": {
