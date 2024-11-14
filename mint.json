@@ -86,7 +86,10 @@
     {
       "group": "Templates",
       "pages": [
-        "api-reference/introduction"
+        "templates/overview",
+        "templates/explore",
+        "templates/build-your-own",
+        
       ]
     },
     {
