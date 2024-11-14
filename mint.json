@@ -79,7 +79,7 @@
     },
     {
       "group": "API Components",
-      "pages": ["api-playground/overview", "api-playground/configuration"]
+      "pages": ["introduction", "quickstart"]
     },
     {
       "group": "Settings",
