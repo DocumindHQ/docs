@@ -70,24 +70,21 @@
   ],
   "navigation": [
     {
-      "group": "",
-      "pages": ["Quickstart"]
+      "group": "Getting Started",
+      "pages": ["introduction", "quickstart"]
     },
     {
-      "group": "Guides",
-      "pages": ["guides/installation", "guides/schema-definition", "guides/extraction"]
+      "group": "API Components",
+      "pages": ["api-playground/overview", "api-playground/configuration"]
     },
     {
-      "group": "Templates",
-      "pages": [
-          "templates/overview",
-          {
-              "group": "Explore",
-              "pages": ["templates/explore/bank-statements"]
-          },
-          "templates/contribute"
-      ]
-  }
+      "group": "Settings",
+      "pages": ["settings/global", "settings/page"]
+    },
+    {
+      "group": "Analytics",
+      "pages": ["analytics/posthog"]
+    }
   ],
   "footerSocials": {
     "x": "https://x.com/mintlify",
