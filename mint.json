@@ -72,7 +72,7 @@
       "url": "https://documind.xyz/get-started"
     }
   ],
-  "navigation": [
+  "Navigation": [
     {
       "group": "Getting Started",
       "pages": ["introduction", "quickstart"]
