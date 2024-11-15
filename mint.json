@@ -6,6 +6,9 @@
     "light": "/logo/light.svg"
   },
   "layout": "sidenav",
+  "sidebar": {
+    "items": "border"
+  },
   "font":{
     "headings": {
       "family": "Roobert Semibold",
@@ -89,8 +92,8 @@
       ]
   },
   {
-    "group": "What's new?",
-    "pages": ["changelog/2024-11-14"]
+    "group": "Changelog",
+    "pages": ["changelog/overview"]
   }
   ],
   "metadata": {
@@ -98,9 +101,35 @@
     "og:locale": "en_US",
     "article:publisher": "Tami Lawal"
   },
-  "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
-  }
+  "footer": {
+  "socials": { "github": "https://github.com/DocumindHQ", "website": "https://documind.xyz" },
+  "links": [
+    {
+      "title": "Company",
+      "links": [
+        { "label": "About", "url": "https://mintlify.com" }, 
+        { "label": "Blog", "url": "https://mintlify.com" },
+        { "label": "Roadmap", "url": "https://mintlify.com" },
+        { "label": "Security", "url": "https://mintlify.com" },
+        { "label": "Contact", "url": "https://mintlify.com" }
+      ]
+    }, 
+    {
+      "title": "Developers",
+      "links": [
+        { "label": "Source Code", "url": "https://mintlify.com" },
+        { "label": "Changelog", "url": "https://mintlify.com" },
+        { "label": "Templates", "url": "https://mintlify.com" },
+        { "label": "Try demo", "url": "https://mintlify.com" }
+      ]
+    },
+    {
+      "title": "Legal",
+      "links": [
+        { "label": "Privacy Policy", "url": "https://mintlify.com" },
+        { "label": "Terms of Service", "url": "https://mintlify.com" }
+      ]
+    }
+  ]
+}
 }
