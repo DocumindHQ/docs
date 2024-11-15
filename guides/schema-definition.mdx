@@ -2,3 +2,88 @@
 title: 'Schema Definition'
 icon: 'brackets-square'
 ---
+
+<Note>
+A schema is the blueprint for how Documind extracts specific information from your documents. It helps define the structure of the data you want.
+</Note>
+
+## What is a Schema?
+
+A **schema** in Documind is a structured definition that tells the system what data to extract from a document. Think of it as a template or a map that ensures your extraction process retrieves the correct information in the desired format.
+
+### What can a schema do?
+
+Schemas are used to:
+
+- Define the fields to extract.
+- Specify the type of data for each field (e.g., `string`, `number`, `array`).
+- Set the relationships between fields (e.g., nested arrays or objects).
+
+---
+
+## Defining a Schema
+
+You can define a schema in Documind as a JSON object. Each field in the schema includes the following:
+
+<ResponseField name="name" type="string" required>
+  A unique identifier for the field.
+</ResponseField>
+
+<ResponseField name="description" type="string" required>
+  A brief explanation of what the field represents.
+</ResponseField>
+
+<ResponseField name="type" type="enum" required>
+  The type of data. Options are: `string`, `number`, `array`, `object`.
+</ResponseField>
+
+<ResponseField name="children" type="array">
+  Used when the field type is an `array` or `object`.
+</ResponseField>
+
+---
+
+## Example Schema
+
+Here’s an example schema for a **bank statement**:
+
+```json Bank statement schema
+[
+  {
+    "name": "openingBalance",
+    "type": "string",
+    "description": "The opening balance of the account."
+  },
+  {
+    "name": "accountNumber",
+    "type": "string",
+    "description": "The account number of the account."
+  },
+  {
+    "name": "newTransactions",
+    "type": "array",
+    "description": "The new transactions of the account.",
+    "children": [
+      {
+        "name": "moneyIn",
+        "type": "string",
+        "description": "The money deposited in the transaction."
+      },
+      {
+        "name": "moneyOut",
+        "type": "string",
+        "description": "The money withdrawn in the transaction."
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "description": "A short note about the transaction."
+      },
+      {
+        "name": "category",
+        "type": "string",
+        "description": "The type of transaction (e.g., food, utilities)."
+      }
+    ]
+  }
+]
