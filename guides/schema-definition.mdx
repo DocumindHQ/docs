@@ -47,43 +47,48 @@ You can define a schema in Documind as a JSON object. Each field in the schema i
 
 Here’s an example schema for a **bank statement**:
 
-```json Bank statement schema
-[
+```javascript Bank statement schema
+const schema = [
   {
-    "name": "openingBalance",
-    "type": "string",
-    "description": "The opening balance of the account."
+    name: "accountNumber",
+    type: "string",
+    description: "The account number of the bank statement."
   },
   {
-    "name": "accountNumber",
-    "type": "string",
-    "description": "The account number of the account."
+    name: "openingBalance",
+    type: "number",
+    description: "The opening balance of the account."
   },
   {
-    "name": "newTransactions",
-    "type": "array",
-    "description": "The new transactions of the account.",
-    "children": [
+    name: "transactions",
+    type: "array",
+    description: "List of transactions in the account.",
+    children: [
       {
-        "name": "moneyIn",
-        "type": "string",
-        "description": "The money deposited in the transaction."
+        name: "date",
+        type: "string",
+        description: "Transaction date."
       },
       {
-        "name": "moneyOut",
-        "type": "string",
-        "description": "The money withdrawn in the transaction."
+        name: "creditAmount",
+        type: "number",
+        description: "Credit Amount of the transaction."
       },
       {
-        "name": "description",
-        "type": "string",
-        "description": "A short note about the transaction."
+        name: "debitAmount",
+        type: "number",
+        description: "Debit Amount of the transaction."
       },
       {
-        "name": "category",
-        "type": "string",
-        "description": "The type of transaction (e.g., food, utilities)."
+        name: "description",
+        type: "string",
+        description: "Transaction description."
       }
     ]
+  },
+  {
+    name: "closingBalance",
+    type: "number",
+    description: "The closing balance of the account."
   }
 ]

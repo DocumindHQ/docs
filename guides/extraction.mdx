@@ -2,3 +2,132 @@
 title: 'Extraction'
 icon: 'file-export'
 ---
+
+## How to Perform an Extraction
+
+Here's how you can use **Documind** to extract data:
+
+```javascript
+import { extract } from 'documind';
+
+const result = await extract({
+  file: 'https://example.com/bank_statement.pdf',
+  schema: [
+    {
+      "name": "accountNumber",
+      "type": "string",
+      "description": "The account number of the bank statement."
+    },
+    {
+      "name": "openingBalance",
+      "type": "number",
+      "description": "The opening balance in the account."
+    },
+    {
+      "name": "transactions",
+      "type": "array",
+      "description": "A list of transactions in the account.",
+      "children": [
+        {
+          "name": "date",
+          "type": "string",
+          "description": "The date of the transaction."
+        },
+        {
+          "name": "creditAmount",
+          "type": "number",
+          "description": "The amount credited in the transaction."
+        },
+        {
+          "name": "debitAmount",
+          "type": "number",
+          "description": "The amount debited in the transaction."
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "A short note about the transaction."
+        }
+      ]
+    },
+    {
+      "name": "closingBalance",
+      "type": "number",
+      "description": "The closing balance in the account."
+    }
+  ]
+});
+
+console.log(result);
+```
+
+<ResponseField name="file" type="string" required>
+  The file URL.
+</ResponseField>
+
+<ResponseField name="schema" type="array" required>
+  The schema of the data to extract. Learn more about schema definitions [here](/guides/schema-definition).
+</ResponseField>
+
+<Note>
+Currently, only PDF file typesand URLsar accepted. Ensure your document is hosted and accessible via a public URL.
+</Note>
+
+## Example Output
+
+When you run the code above, Documind will return a structured JSON object with the extracted data. Here's an example of the result:
+
+```json
+{
+  "success": true,
+  "pages": 1,
+  "data": {
+    "accountNumber": "100002345",
+    "openingBalance": $3200,
+    "transactions": [
+      {
+        "date": "2021-05-12",
+        "creditAmount": null,
+        "debitAmount": $100,
+        "description": "transfer to Tom"
+      },
+      {
+        "date": "2021-05-12",
+        "creditAmount": $50,
+        "debitAmount": null,
+        "description": "For lunch the other day"
+      },
+      {
+        "date": "2021-05-13",
+        "creditAmount": $20,
+        "debitAmount": null,
+        "description": "Refund for voucher"
+      },
+      {
+        "date": "2021-05-13",
+        "creditAmount": null,
+        "debitAmount": $750,
+        "description": "May's rent"
+      }
+    ],
+    "closingBalance": $2420
+  },
+  "fileName": "bank_statement.pdf"
+}
+```
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the extraction was successful or not.
+</ResponseField>
+
+<ResponseField name="pages" type="number">
+  The number of pages processed in the document.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  The extracted data based on the schema.
+</ResponseField>
+
+<ResponseField name="fileName" type="string">
+  The name of the processed file
+</ResponseField>
