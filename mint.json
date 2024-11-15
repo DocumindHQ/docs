@@ -9,18 +9,6 @@
   "sidebar": {
     "items": "border"
   },
-  "font":{
-    "headings": {
-      "family": "Roobert Semibold",
-      "url": "https://framerusercontent.com/assets/Ue46Yo2GHYihMTKb21t9dajUI.woff2",
-      "format": "woff2"
-    },
-    "body": {
-      "family": "Roobert Regular",
-      "url": "https://framerusercontent.com/assets/cW2uu3BWUn1DskIV6V8KXUlfCxk.woff2",
-      "format": "woff2"
-    }
-  },
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#1098F7",
