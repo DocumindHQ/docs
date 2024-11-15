@@ -2,3 +2,41 @@
 title: 'Installation'
 icon: 'download'
 ---
+
+## System Requirements
+
+To use **Documind**, ensure your system meets the following requirements:
+
+- **Node.js**: Version 16 or later
+- **npm**, **yarn**, or **pnpm**: For package management
+- **Ghostscript**: Installed for PDF processing  
+  - [Installation guide for Ghostscript](https://ghostscript.com/releases/index.html)
+- **GraphicsMagick**: For image processing
+  - [Installation guide for GraphicsMagick](http://www.graphicsmagick.org/download.html)
+
+
+## Install the Package
+
+To install **Documind**, run the following command using your preferred package manager:
+
+```npm
+npm install documind
+```
+
+## Environment Variables
+
+Set up your `.env` file.
+
+```.env.example
+OPENAI_API_KEY=<your-openai-api-key>
+SUPABASE_URL=<your-supabase-url>
+SUPABASE_KEY=<your-supabase-api-key>
+SUPABASE_BUCKET=<your-supabase-bucket-name>
+```
+
+| Key                  | Description                                                                 |
+|----------------------|-----------------------------------------------------------------------------|
+| **OPENAI_API_KEY**   | Your OpenAI API key.                       |
+| **SUPABASE_URL**     | The base URL of your Supabase instance.                                    |
+| **SUPABASE_KEY**     | The API key for accessing your Supabase instance.                         |
+| **SUPABASE_BUCKET**  | The name of the Supabase storage bucket where files will be stored.       |
