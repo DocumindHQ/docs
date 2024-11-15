@@ -93,6 +93,11 @@
     "pages": ["changelog/2024-11-14"]
   }
   ],
+  "metadata": {
+    "og:site_name": "Documind",
+    "og:locale": "en_US",
+    "article:publisher": "Tami Lawal"
+  },
   "footerSocials": {
     "x": "https://x.com/mintlify",
     "github": "https://github.com/mintlify",

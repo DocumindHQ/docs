@@ -1,32 +1,18 @@
-# Mintlify Starter Kit
+# Welcome to Documind Developer Documentation
 
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
+This is the central hub for all developer resources related to [Documind](https://github.com/DocumindHQ/documind), an open-source library for document processing and data extraction.
 
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
+## Getting Started
 
-### Development
+- [Documind Website](https://documind.xyz)
+- [Developer Documentation](https://docs.documind.xyz)
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
+## What is Documind?
 
-```
-npm i -g mintlify
-```
+Documind is an open-source tool designed to make document data extraction simple and scalable. Whether you’re handling invoices, bank statements, or complex records, Documind helps you extract meaningful data effortlessly.
 
-Run the following command at the root of your documentation (where mint.json is)
+### Key Capabilities
 
-```
-mintlify dev
-```
-
-### Publishing Changes
-
-Install our Github App to auto propagate changes from your repo to your deployment. Changes will be deployed to production automatically after pushing to the default branch. Find the link to install on your dashboard. 
-
-#### Troubleshooting
-
-- Mintlify dev isn't running - Run `mintlify install` it'll re-install dependencies.
-- Page loads as a 404 - Make sure you are running in a folder with `mint.json`
+- **Precision Data Extraction**: Access accurate data points from various document formats.
+- **Scalable Architecture**: Process large volumes without compromising reliability.
+- **Schema Flexibility**: Easily adapt to new data needs with customizable schema definitions.
