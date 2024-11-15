@@ -45,24 +45,24 @@
   "anchors": [
     {
       "name": "Visit website",
-      "icon": "book-open-cover",
+      "icon": "globe-pointer",
       "url": "https://documind.xyz"
     },
     {
-      "name": "Github",
+      "name": "Open-source",
       "icon": "github",
       "url": "https://github.com/DocumindHQ/documind.git"
     },
     {
       "name": "Request access",
-      "icon": "newspaper",
+      "icon": "key",
       "url": "https://documind.xyz/get-started"
     }
   ],
   "navigation": [
     {
       "group": "",
-      "pages": ["Quickstart"]
+      "pages": ["quickstart"]
     },
     {
       "group": "Guides",
@@ -74,9 +74,10 @@
           "templates/overview",
           {
               "group": "Explore",
+              "icon": "magnifying-glass",
               "pages": ["templates/explore/bank-statements"]
           },
-          "templates/contribute"
+          "templates/build"
       ]
   },
   {
