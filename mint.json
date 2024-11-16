@@ -68,18 +68,6 @@
       "group": "Guides",
       "pages": ["guides/installation", "guides/schema-definition", "guides/extraction"]
     },
-    {
-      "group": "Templates",
-      "pages": [
-          "templates/overview",
-          {
-              "group": "Explore",
-              "icon": "magnifying-glass",
-              "pages": ["templates/explore/bank-statements"]
-          },
-          "templates/build"
-      ]
-  },
   {
     "group": "Changelog",
     "pages": ["changelog/overview"]
