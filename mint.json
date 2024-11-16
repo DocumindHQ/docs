@@ -30,8 +30,8 @@
     }
   ],
   "topbarCtaButton": {
-    "name": "Try demo",
-    "url": "https://documind.xyz/demo"
+    "name": "Request access",
+    "url": "https://documind.xyz/get-started"
   },
   "primaryTab": {
     "name": "Open-source"
@@ -52,11 +52,6 @@
       "name": "Github",
       "icon": "github",
       "url": "https://github.com/DocumindHQ/documind.git"
-    },
-    {
-      "name": "Request access",
-      "icon": "key",
-      "url": "https://documind.xyz/get-started"
     }
   ],
   "navigation": [
@@ -79,34 +74,6 @@
     "article:publisher": "Tami Lawal"
   },
   "footer": {
-  "socials": { "github": "https://github.com/DocumindHQ", "website": "https://documind.xyz" },
-  "links": [
-    {
-      "title": "Company",
-      "links": [
-        { "label": "About", "url": "https://mintlify.com" }, 
-        { "label": "Blog", "url": "https://mintlify.com" },
-        { "label": "Roadmap", "url": "https://mintlify.com" },
-        { "label": "Security", "url": "https://mintlify.com" },
-        { "label": "Contact", "url": "https://mintlify.com" }
-      ]
-    }, 
-    {
-      "title": "Developers",
-      "links": [
-        { "label": "Source Code", "url": "https://mintlify.com" },
-        { "label": "Changelog", "url": "https://mintlify.com" },
-        { "label": "Templates", "url": "https://mintlify.com" },
-        { "label": "Try demo", "url": "https://mintlify.com" }
-      ]
-    },
-    {
-      "title": "Legal",
-      "links": [
-        { "label": "Privacy Policy", "url": "https://mintlify.com" },
-        { "label": "Terms of Service", "url": "https://mintlify.com" }
-      ]
-    }
-  ]
+  "socials": { "github": "https://github.com/DocumindHQ", "website": "https://documind.xyz" }
 }
 }
