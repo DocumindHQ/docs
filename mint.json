@@ -30,8 +30,8 @@
     }
   ],
   "topbarCtaButton": {
-    "name": "Request access",
-    "url": "https://documind.xyz/signup"
+    "type": "github",
+    "url": "https://github.com/DocumindHQ/documind.git"
   },
   "primaryTab": {
     "name": "Open-source"
@@ -52,6 +52,11 @@
       "name": "Github",
       "icon": "github",
       "url": "https://github.com/DocumindHQ/documind.git"
+    },
+    {
+      "name": "Request access",
+      "icon": "key",
+      "url": "https://www.documind.xyz/signup"
     }
   ],
   "navigation": [
@@ -63,6 +68,18 @@
       "group": "Guides",
       "pages": ["guides/installation", "guides/schema-definition", "guides/extraction"]
     },
+    {
+      "group": "Templates",
+      "pages": [
+          "templates/overview",
+          {
+              "group": "Explore",
+              "icon": "magnifying-glass",
+              "pages": ["templates/explore/bank-statements"]
+          },
+          "templates/contribute"
+      ]
+  },
   {
     "group": "Changelog",
     "pages": ["changelog/overview"]
