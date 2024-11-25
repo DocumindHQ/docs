@@ -75,7 +75,8 @@
           {
               "group": "Explore",
               "icon": "magnifying-glass",
-              "pages": ["templates/explore/bank-statements"]
+              "pages": ["templates/explore/bank-statement"]
+
           },
           "templates/contribute"
       ]
