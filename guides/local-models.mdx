@@ -1,0 +1,39 @@
+---
+title: 'Local LLM Models'
+icon: 'server'
+---
+
+## Using Local Models
+
+To enable the use of local LLM models, set the `BASE_URL` in your `.env` file:
+
+```bash example
+BASE_URL=http://127.0.0.1:11434/v1
+```
+### Configuration
+
+| Key                  | Description                                                                 |
+|----------------------|-----------------------------------------------------------------------------|
+| **BASE_URL**   | Custom base url.                       |
+
+### Available Models
+You can choose from the following models:
+
+1. Llava
+2. Llama3.2-vision
+
+By default, the Llava model will be used. However, you can specify a different model in your code:
+
+```javascript
+import { extract } from 'documind';
+
+const result = await extract({
+  file: 'https://example.com/document.pdf',
+  template: 'invoice', // Use a predefined template or your custom schema
+  model: 'llama3.2-vision' // Specify a model or use the default (Llava)
+});
+
+console.log(result);
+```
+<Warning> Local models may not always provide optimal results. We are continually working to improve performance and add support for newer models. </Warning>
+
