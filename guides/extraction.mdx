@@ -1,12 +1,18 @@
 ---
-title: 'Extraction'
+title: 'Extracting Data'
 icon: 'file-export'
+"og:title": "Extract Structured Data • Documind Documentation" 
+"og:description": "Extract structured data from documents with Documind"
 ---
 
-## How to Perform an Extraction
+## Extracting data with Documind
 
-Here's how you can use **Documind** to extract data:
+<Tabs>
+<Tab title="Open-source">
 
+Let's run a sample extraction with the Documind open-source package.
+
+<Accordion title="Request">
 ```javascript
 import { extract } from 'documind';
 
@@ -54,29 +60,42 @@ const result = await extract({
       "name": "closingBalance",
       "type": "number",
       "description": "The closing balance in the account."
-    }
+    },
+    {
+    name: "highValueAccount",
+    type: "boolean",
+    description: "Closing balance is more than 50000 ."
+  },
+  {
+    name: "statementType",
+    type: "enum",
+    description: "The type of document",
+    values: ["Current Account", "Savings Account"]
+  }
   ]
 });
 
 console.log(result);
 ```
+</Accordion>
 
 <ResponseField name="file" type="string" required>
   The file URL.
 </ResponseField>
 
-<ResponseField name="schema" type="array" required>
-  The schema of the data to extract. Learn more about schema definitions [here](/guides/schema-definition).
+<ResponseField name="schema" type="object[]" required>
+The schema that defines the structure of the data you want to extract. More on schema definitions [here](/guides/schema-definition).
 </ResponseField>
 
 <Note>
-Currently, only PDF file types and URLs are accepted. Ensure your document is hosted and accessible via a public URL.
+Currently, only URLs are accepted. Ensure your document is hosted and accessible via a public URL.
 </Note>
 
-## Example Output
+### Example Output
 
-When you run the code above, Documind will return a structured JSON object with the extracted data. Here's an example of the result:
+Once the extraction process is complete, the result will return a structured JSON object with the extracted data:
 
+<Accordion title="Response">
 ```json
 {
   "success": true,
@@ -110,11 +129,14 @@ When you run the code above, Documind will return a structured JSON object with 
         "description": "May's rent"
       }
     ],
-    "closingBalance": 2420
+    "closingBalance": 2420,
+    "highValueAccount": false,
+    "statementType": "Savings Account"
   },
   "fileName": "bank_statement.pdf"
 }
 ```
+</Accordion>
 
 <ResponseField name="success" type="boolean">
   Indicates whether the extraction was successful or not.
@@ -131,3 +153,100 @@ When you run the code above, Documind will return a structured JSON object with 
 <ResponseField name="fileName" type="string">
   The name of the processed file
 </ResponseField>
+
+## Configurations
+
+<AccordionGroup>
+  <Accordion title="Model">
+    Specify the model you want to use to perform an extraction. 
+    
+    If you have a custome BASE_URL set in your environment, you can choose between `llava` and `llama3.2-vision` models. Otherwise you can use `gpt-4o` or `gpt-4o-mini`.
+
+    ```javascript
+    import { extract } from 'documind';
+
+    const result = await extract({
+    file: 'https://example.com/document.pdf',
+    model: 'llama3.2-vision' // Specify a model or use the default (Llava)
+    });
+
+    console.log(result);
+    ```
+
+  </Accordion>
+
+  <Accordion title="Templates">
+  To use a template, simply pass the template name in the `extract` function:
+
+  ```javascript
+  import { extract } from 'documind';
+
+  const result = await extract({
+  file: 'https://example.com/document.pdf',
+  template: 'invoice', // Specify the template name
+  });
+
+  console.log(result);
+  ```
+  [Read more about creating and using templates.](/guides/templates/overview)
+  </Accordion>
+
+  <Accordion title="Autoschema">
+    Automatically generate a schema. Documind will create and apply a schema basd on the content of the document.
+
+    ```javascript
+  import { extract } from 'documind';
+
+  const result = await extract({
+  file: 'https://example.com/document.pdf',
+  autoSchema: true
+  });
+
+  console.log(result);
+  ```
+  </Accordion>
+
+  <Warning>You can only select one of `template`, `schema`, or `autoSchema`.</Warning>
+</AccordionGroup>
+</Tab>
+<Tab title="Dashboard">
+    <Frame>
+   <img src="/images/extraction-on-dashboard.png" />
+   </Frame>
+    To extract data from documents on the dashboard:
+
+1. Log in to your account and navigate to the **"Extract"** page from the side menu.  
+2. Upload the document you want to process.  
+3. Define your schema using the visual editor, or switch to JSON mode for direct editing.  
+4. Click the **"Extract Data"** button to start the extraction process.  
+5. Once the extraction is complete, the results will be available in the **"Result"** tab.  
+</Tab>
+<Tab title="API">
+Here's how to extract data from a document using the API:
+
+Start by calling the endpoint to create an extraction job.  
+Pass in the file URL along with your schema.  
+
+```bash Create a job
+curl  -X POST \
+'https://api.documind.xyz/run-job' \
+--header 'Authorization: Bearer DOCUMIND_API_KEY' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+"file": "https://example.com/bank-statement.pdf"
+"schema": [*/Your schema here/*]
+}'
+``` 
+The response will include the job ID, which you can use with the next endpoint to check the status and retrieve the results of your extraction. 
+
+```bash Create a job
+curl  -X GET \
+'https://api.documind.xyz/job/{id}' \
+--header 'Authorization: Bearer DOCUMIND_API_KEY' \
+--header 'Content-Type: application/json' \
+```
+For detailed information, visit the [API Reference](/api-reference).
+</Tab>
+</Tabs>
+ 
+

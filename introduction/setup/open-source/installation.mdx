@@ -1,0 +1,39 @@
+---
+title: 'Installation'
+icon: 'download'
+"og:title": "Install Documind • Documind Documentation" 
+"og:description": "Get started with Documind's open-source package"
+---
+
+## System Requirements
+
+To run **Documind**, your system should meet the following requirements:
+
+- **Node.js**: Version 16 or higher  
+- **npm**: For package management  
+- **Ghostscript**: Required for PDF processing  
+  - [Installation guide for Ghostscript](https://ghostscript.com/releases/index.html)  
+- **GraphicsMagick**: For image processing  
+  - [Installation guide for GraphicsMagick](http://www.graphicsmagick.org/download.html)  
+
+---
+
+## Install the Package
+
+To install **Documind**, run the following command:
+
+```bash
+npm install documind
+```
+
+## Set Up Environment Variables
+
+Create a `.env` file and configure your environment with the following:
+
+```bash .env.example
+OPENAI_API_KEY=<your-openai-api-key>
+```
+
+| Key                  | Description                                    |
+|----------------------|------------------------------------------------|
+| **OPENAI_API_KEY**    | Your OpenAI API key.                           |

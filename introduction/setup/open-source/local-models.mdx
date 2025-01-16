@@ -1,9 +1,11 @@
 ---
-title: 'Local LLM Models'
+title: 'Local Models'
 icon: 'server'
+"og:title": "Using Local Models • Documind Documentation" 
+"og:description": "Set up and run local LLM models with Documind"
 ---
 
-## Using Local Models
+## Enable Local Models
 
 To enable the use of local LLM models, set the `BASE_URL` in your `.env` file:
 
@@ -24,8 +26,7 @@ import { extract } from 'documind';
 
 const result = await extract({
   file: 'https://example.com/document.pdf',
-  template: 'invoice', // Use a predefined template or your custom schema
-  model: 'llama3.2-vision' // Specify a model or use the default (Llava)
+  model: 'llama3.2-vision' // Specify a model or use the default (llava)
 });
 
 console.log(result);

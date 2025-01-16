@@ -1,29 +1,25 @@
 ---
 title: 'Schema Definition'
 icon: 'brackets-square'
+"og:title": "Schema Definition • Documind Documentation" 
+"og:description": "Learn how to define schemas for structured data extraction"
 ---
 
-<Note>
-A schema is the blueprint for how Documind extracts specific information from your documents. It helps define the structure of the data you want.
-</Note>
+## What is a schema?
 
-## What is a Schema?
-
-A **schema** in Documind is a structured definition that tells the system what data to extract from a document. Think of it as a template or a map that ensures your extraction process retrieves the correct information in the desired format.
+A schema in Documind defines the structure of data to be extracted from a document. Think of it as a blueprint or template that guides the extraction process to retrieve the correct information in the desired format.
 
 ### What can a schema do?
 
 Schemas are used to:
 
 - Define the fields to extract.
-- Specify the type of data for each field (e.g., `string`, `number`, `array`).
+- Specify the type of data for each field (e.g., `string`, `number`, `array`, `enum`, `boolean`).
 - Set the relationships between fields (e.g., nested arrays or objects).
-
----
 
 ## Defining a Schema
 
-You can define a schema in Documind as a JSON object. Each field in the schema includes the following:
+In Documind, a schema is defined as an array of objects, each representing a field to be extracted. Each field object includes the following properties:
 
 <ResponseField name="name" type="string" required>
   A unique identifier for the field.
@@ -34,14 +30,17 @@ You can define a schema in Documind as a JSON object. Each field in the schema i
 </ResponseField>
 
 <ResponseField name="type" type="enum" required>
-  The type of data. Options are: `string`, `number`, `array`, `object`.
+  The type of data. Options are: `string`, `number`, `array`, `object`, `enum`, `boolean`.
 </ResponseField>
 
-<ResponseField name="children" type="array">
-  Used when the field type is an `array` or `object`.
+<ResponseField name="values" type="string[]">
+  Used when the field type is `enum`, to specify available options.
 </ResponseField>
 
----
+<ResponseField name="children" type="object[]">
+  Nested fields for `array` or `object` types.
+</ResponseField>
+
 
 ## Example Schema
 
@@ -90,5 +89,16 @@ const schema = [
     name: "closingBalance",
     type: "number",
     description: "The closing balance of the account."
+  },
+  {
+    name: "highValueAccount",
+    type: "boolean",
+    description: "Closing balance is more than 50000 ."
+  },
+  {
+    name: "statementType",
+    type: "enum",
+    description: "The type of document",
+    values: ["Current Account", "Savings Account"]
   }
 ]

@@ -1,15 +1,42 @@
 {
   "$schema": "https://mintlify.com/schema.json",
+    "api": {
+      "baseUrl": "https://api.documind.xyz", 
+      "auth": {
+        "method": "bearer" 
+      },
+    "playground": {
+      "mode": "show",
+      "disableProxy": true
+    },
+    "paramFields": {
+      "expanded": "topLevel"
+    }
+  },
   "name": "Documind",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
-  "layout": "sidenav",
+  "layout": "topnav",
+  "modeToggle": {
+    "default": "dark"
+  },
   "sidebar": {
     "items": "card"
   },
   "favicon": "/favicon.svg",
+  "font":{
+    "headings": {
+      "family": "Roobert",
+      "weight": 800,
+      "url": "https://framerusercontent.com/assets/Ue46Yo2GHYihMTKb21t9dajUI.woff2",
+      "format": "woff2"
+    },
+    "body": {
+      "family": "Inter"
+    }
+  },
   "colors": {
     "primary": "#1098F7",
     "light": "#1098F7",
@@ -25,8 +52,8 @@
   },
   "topbarLinks": [
     {
-      "name": "Contact",
-      "url": "mailto:hello@documind.xyz"
+      "name": "Try it out",
+      "url": "https://www.documind.xyz/playground"
     }
   ],
   "topbarCtaButton": {
@@ -34,9 +61,13 @@
     "url": "https://github.com/DocumindHQ/documind.git"
   },
   "primaryTab": {
-    "name": "Open-source"
+    "name": "Documentation"
   },
   "tabs": [
+    {
+      "name": "API References",
+      "url": "api-reference"
+    },
     {
       "name": "Changelog",
       "url": "changelog"
@@ -54,36 +85,62 @@
       "url": "https://github.com/DocumindHQ/documind.git"
     },
     {
-      "name": "Request access",
+      "name": "Join the beta",
       "icon": "key",
       "url": "https://www.documind.xyz/signup"
     }
   ],
   "navigation": [
     {
-      "group": "",
-      "pages": ["quickstart"]
+      "group": "Introduction",
+      "pages": [
+        "introduction/welcome-to-documind", 
+        {
+          "group": "Setup",
+          "icon": "arrow-progress",
+          "pages": [
+            {
+              "group": "Open-Source",
+              "icon": "code",
+              "pages": ["introduction/setup/open-source/installation", "introduction/setup/open-source/local-models"]
+
+          },
+            "introduction/setup/documind-cloud"
+          ]
+        }
+      ]
     },
     {
       "group": "Guides",
-      "pages": ["guides/installation", "guides/schema-definition", "guides/extraction", "guides/local-models"]
-    },
-    {
-      "group": "Templates",
       "pages": [
-          "templates/overview",
-          {
+        "guides/schema-definition", 
+        "guides/extraction", 
+        {
+          "group": "Templates",
+          "icon": "vials",
+          "pages": [
+            "guides/templates/overview",
+            {
               "group": "Explore",
               "icon": "magnifying-glass",
-              "pages": ["templates/explore/bank-statement"]
-
+              "pages": ["guides/templates/explore/bank-statement"]
           },
-          "templates/contribute"
+          "guides/templates/contribute"
+          ]
+        }
       ]
+    },
+  {
+    "group": "",
+    "pages": ["api-reference/authentication", "api-reference/rate-limits"]
   },
   {
-    "group": "Changelog",
-    "pages": ["changelog/overview"]
+    "group": "Jobs",
+    "pages": ["api-reference/create-job", "api-reference/get-job" ]
+  },
+  {
+    "group": "Product Updates",
+    "pages": ["changelog/open-source", "changelog/documind-cloud"]
   }
   ],
   "metadata": {
