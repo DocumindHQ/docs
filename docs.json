@@ -1,0 +1,178 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
+  "name": "Documind",
+  "colors": {
+    "primary": "#1098F7",
+    "light": "#1098F7",
+    "dark": "#1098F7"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "introduction/welcome-to-documind",
+              {
+                "group": "Setup",
+                "icon": "arrow-progress",
+                "pages": [
+                  {
+                    "group": "Open-Source",
+                    "icon": "code",
+                    "pages": [
+                      "introduction/setup/open-source/installation",
+                      "introduction/setup/open-source/local-models"
+                    ]
+                  },
+                  "introduction/setup/documind-cloud"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/schema-definition",
+              "guides/extraction",
+              {
+                "group": "Templates",
+                "icon": "vials",
+                "pages": [
+                  "guides/templates/overview",
+                  {
+                    "group": "Explore",
+                    "icon": "magnifying-glass",
+                    "pages": [
+                      "guides/templates/explore/bank-statement"
+                    ]
+                  },
+                  "guides/templates/contribute"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API References",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "api-reference/authentication",
+              "api-reference/rate-limits"
+            ]
+          },
+          {
+            "group": "Jobs",
+            "pages": [
+              "api-reference/create-job",
+              "api-reference/get-job"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "groups": [
+          {
+            "group": "Product Updates",
+            "pages": [
+              "changelog/open-source",
+              "changelog/documind-cloud"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Visit website",
+          "href": "https://documind.xyz",
+          "icon": "globe-pointer"
+        },
+        {
+          "anchor": "Github",
+          "href": "https://github.com/DocumindHQ/documind.git",
+          "icon": "github"
+        },
+        {
+          "anchor": "Join the beta",
+          "href": "https://www.documind.xyz/signup",
+          "icon": "key"
+        }
+      ]
+    }
+  },
+  "styling": {
+    "codeblocks": "system"
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "api": {
+    "playground": {
+      "display": "interactive",
+      "proxy": false
+    },
+    "mdx": {
+      "server": "https://api.documind.xyz",
+      "auth": {
+        "method": "bearer"
+      }
+    }
+  },
+  "appearance": {
+    "default": "dark"
+  },
+  "background": {
+    "color": {
+      "light": "#f2f2f2",
+      "dark": "#212121"
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Try it out",
+        "href": "https://www.documind.xyz/playground"
+      }
+    ],
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/DocumindHQ/documind.git"
+    }
+  },
+  "seo": {
+    "metatags": {
+      "og:site_name": "Documind",
+      "og:locale": "en_US",
+      "article:publisher": "Tami Lawal"
+    },
+    "indexing": "navigable"
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/DocumindHQ",
+      "website": "https://documind.xyz"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Roobert",
+      "weight": 800,
+      "format": "woff2",
+      "source": "https://framerusercontent.com/assets/Ue46Yo2GHYihMTKb21t9dajUI.woff2"
+    },
+    "body": {
+      "family": "Inter"
+    }
+  }
+}
