@@ -1,18 +1,17 @@
 ---
-title: 'Extracting Data'
-icon: 'file-export'
+title: 'Extracting Structured Data'
+sidebarTitle: 'Structured Data'
 "og:title": "Extract Structured Data • Documind Documentation" 
 "og:description": "Extract structured data from documents with Documind"
 ---
 
-## Extracting data with Documind
-
 <Tabs>
 <Tab title="Open-source">
 
+## Request
+
 Let's run a sample extraction with the Documind open-source package.
 
-<Accordion title="Request">
 ```javascript
 import { extract } from 'documind';
 
@@ -77,25 +76,36 @@ const result = await extract({
 
 console.log(result);
 ```
-</Accordion>
+### Parameters
+
+<Note>
+Currently, only URLs are accepted. Ensure your document is hosted and accessible via a public URL.
+</Note>
 
 <ResponseField name="file" type="string" required>
   The file URL.
 </ResponseField>
 
 <ResponseField name="schema" type="object[]" required>
-The schema that defines the structure of the data you want to extract. More on schema definitions [here](/guides/schema-definition).
+The schema that defines the structure of the data you want to extract. [Read](/guides/schema-definition) more on how to define a schema.
 </ResponseField>
 
-<Note>
-Currently, only URLs are accepted. Ensure your document is hosted and accessible via a public URL.
-</Note>
+<ResponseField name="model" type="string">
+The model you choose. Find the list of supported models [here](/introduction/setup/open-source/installation#set-up-environment-variables).
+</ResponseField>
 
-### Example Output
+<ResponseField name="template" type="string">
+You can select a template schema that matches your document. [Template options] (/guides/templates/overview)
+</ResponseField>
+
+<ResponseField name="autoSchema" type="boolean | object">
+Use autoSchema to auto-generate your schema
+</ResponseField>
+
+## Example Output
 
 Once the extraction process is complete, the result will return a structured JSON object with the extracted data:
 
-<Accordion title="Response">
 ```json
 {
   "success": true,
@@ -134,9 +144,9 @@ Once the extraction process is complete, the result will return a structured JSO
     "statementType": "Savings Account"
   },
   "fileName": "bank_statement.pdf"
+  "markdown": "## Bank Statement\n\n**Account Number:** 100002345\n\n**Opening Balance:** $3200.00\n\n**Closing Balance:** $2420.00\n\n**Statement Type:** Savings Account\n\n**High Value Account:** No\n\n## Transactions\n\n| Date       | Description                | Credit | Debit |\n|------------|----------------------------|--------|-------|\n| 2021-05-12 | transfer to Tom           |        | $100.00 |\n| 2021-05-12 | For lunch the other day   | $50.00 |       |\n| 2021-05-13 | Refund for voucher        | $20.00 |       |\n| 2021-05-13 | May's rent                 |        | $750.00 |\n\n"
 }
 ```
-</Accordion>
 
 <ResponseField name="success" type="boolean">
   Indicates whether the extraction was successful or not.
@@ -154,60 +164,10 @@ Once the extraction process is complete, the result will return a structured JSO
   The name of the processed file
 </ResponseField>
 
-## Configurations
+<ResponseField name="markdown" type="string">
+  The markdown of the file
+</ResponseField>
 
-<AccordionGroup>
-  <Accordion title="Model">
-    Specify the model you want to use to perform an extraction. 
-    
-    If you have a custome BASE_URL set in your environment, you can choose between `llava` and `llama3.2-vision` models. Otherwise you can use `gpt-4o` or `gpt-4o-mini`.
-
-    ```javascript
-    import { extract } from 'documind';
-
-    const result = await extract({
-    file: 'https://example.com/document.pdf',
-    model: 'llama3.2-vision' // Specify a model or use the default (Llava)
-    });
-
-    console.log(result);
-    ```
-
-  </Accordion>
-
-  <Accordion title="Templates">
-  To use a template, simply pass the template name in the `extract` function:
-
-  ```javascript
-  import { extract } from 'documind';
-
-  const result = await extract({
-  file: 'https://example.com/document.pdf',
-  template: 'invoice', // Specify the template name
-  });
-
-  console.log(result);
-  ```
-  [Read more about creating and using templates.](/guides/templates/overview)
-  </Accordion>
-
-  <Accordion title="Autoschema">
-    Automatically generate a schema. Documind will create and apply a schema basd on the content of the document.
-
-    ```javascript
-  import { extract } from 'documind';
-
-  const result = await extract({
-  file: 'https://example.com/document.pdf',
-  autoSchema: true
-  });
-
-  console.log(result);
-  ```
-  </Accordion>
-
-  <Warning>You can only select one of `template`, `schema`, or `autoSchema`.</Warning>
-</AccordionGroup>
 </Tab>
 <Tab title="Dashboard">
     <Frame>

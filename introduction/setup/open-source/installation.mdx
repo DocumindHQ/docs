@@ -28,12 +28,29 @@ npm install documind
 
 ## Set Up Environment Variables
 
-Create a `.env` file and configure your environment with the following:
+Create a `.env` file and configure your environment variables based on the model you want to use. Here's a list of supported models:
 
-```bash .env.example
-OPENAI_API_KEY=<your-openai-api-key>
+| Provider          | Models                                                                     | Variable         |
+|-------------------|----------------------------------------------------------------------------|------------------|
+| **OpenAI**        | `gpt-4o-mini`<br/>`gpt-4o`                                                 | `OPENAI_API_KEY` |
+| **Google**        | `gemini-2.0-flash-001`<br/>`gemini-2.0-flash-lite-preview-02-05`           | `GEMINI_API_KEY` |
+| **Ollama**        | `llava`<br/>`llama3.2-vision`                                              | `BASE_URL`       |
+
+
+## Usage
+
+Here's an example of how to use **Documind**:
+
+<Note> If you don't set a model, `gpt-4o-mini` will be used by default. </Note>
+
+```javascript
+import { extract } from 'documind';
+
+const result = await extract({
+  file: 'https://example.com/bank_statement.pdf',
+  model: 'gpt-4o-mini',
+  schema: []
+});
+
+console.log(result);
 ```
-
-| Key                  | Description                                    |
-|----------------------|------------------------------------------------|
-| **OPENAI_API_KEY**    | Your OpenAI API key.                           |

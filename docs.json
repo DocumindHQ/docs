@@ -18,7 +18,7 @@
             "pages": [
               "introduction/welcome-to-documind",
               {
-                "group": "Setup",
+                "group": "Getting Started",
                 "icon": "arrow-progress",
                 "pages": [
                   {
@@ -38,7 +38,14 @@
             "group": "Guides",
             "pages": [
               "guides/schema-definition",
-              "guides/extraction",
+              {
+                "group": "Extraction",
+                "icon": "ufo",
+                "pages": [
+                  "guides/extraction/structured-data",
+                  "guides/extraction/configurations"
+                ]
+              },
               {
                 "group": "Templates",
                 "icon": "vials",
@@ -62,7 +69,7 @@
         "tab": "API References",
         "groups": [
           {
-            "group": "Getting Started",
+            "group": "Start here",
             "pages": [
               "api-reference/authentication",
               "api-reference/rate-limits"
