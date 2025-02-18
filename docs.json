@@ -42,6 +42,7 @@
                 "group": "Extraction",
                 "icon": "ufo",
                 "pages": [
+                  "guides/extraction/supported-file-types",
                   "guides/extraction/structured-data",
                   "guides/extraction/configurations"
                 ]
