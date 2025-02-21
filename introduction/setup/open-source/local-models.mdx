@@ -14,10 +14,7 @@ BASE_URL=http://127.0.0.1:11434/v1
 ```
 
 ### Available Models
-You can choose from the following models:
-
-1. Llava
-2. Llama3.2-vision
+You can find the list of models available to use [here](installation#set-up-environment-variables).
 
 By default, the Llava model will be used. However, you can specify a different model in your code:
 
@@ -26,7 +23,7 @@ import { extract } from 'documind';
 
 const result = await extract({
   file: 'https://example.com/document.pdf',
-  model: 'llama3.2-vision' // Specify a model or use the default (llava)
+  model: 'llama3.2-vision' 
 });
 
 console.log(result);
