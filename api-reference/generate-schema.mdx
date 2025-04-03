@@ -1,0 +1,21 @@
+---
+title: 'Generate Schema'
+api: 'POST /schema'
+---
+
+### Body
+
+<ParamField body="file" type="string" required>
+  File url
+</ParamField>
+
+
+### Response
+
+<ResponseField name="message" type="string">
+  Success message.
+</ResponseField>
+
+<ResponseField name="schema" type="object[]">
+  The generated schema
+</ResponseField>

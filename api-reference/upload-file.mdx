@@ -1,0 +1,17 @@
+---
+title: 'Upload File'
+api: 'POST /upload'
+---
+
+### Body
+
+<ParamField body="file" type="file" required>
+  The uploaded file
+</ParamField>
+
+
+### Response
+
+<ResponseField name="url" type="string">
+  The signed url of the file.
+</ResponseField>
